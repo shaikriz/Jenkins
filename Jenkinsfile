@@ -4,7 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         ws(dir: 'Jenkins_master') {
-          sh '''mvn clean install
+          sh '''pwd
+mvn clean install
 ls -lrt
 echo $PATH
 java -version
