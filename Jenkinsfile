@@ -4,6 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         ws(dir: 'Jenkins_master') {
+          tool(name: 'maven', type: 'Build')
           sh '''pwd
 mvn clean install
 ls -lrt
