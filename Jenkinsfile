@@ -1,19 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('check environment') {
+    stage('Build') {
       steps {
+        deleteDir()
         sh '''ls -lrt
 echo $PATH
 java -version
-env'''
+env
+mvn clean install'''
         sleep 10
-        deleteDir()
-      }
-    }
-    stage('Build') {
-      steps {
-        sh 'mvn clean install'
       }
     }
   }
