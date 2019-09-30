@@ -3,8 +3,6 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        deleteDir()
-        sleep 10
         ws(dir: 'Jenkins_master') {
           sh '''ls -lrt
 echo $PATH
