@@ -8,6 +8,7 @@ echo $PATH
 java -version
 env'''
         sleep 10
+        deleteDir()
       }
     }
     stage('Build') {
