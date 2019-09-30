@@ -5,7 +5,7 @@ pipeline {
       steps {
         ws(dir: 'Jenkins_master') {
           sh '''pwd
-$MVN_HOME/bin/mvn clean install
+/home/dc-user/apache-maven-3.2.1/bin/mvn clean install
 ls -lrt
 echo $PATH
 java -version
