@@ -4,14 +4,15 @@ pipeline {
     stage('Build') {
       steps {
         deleteDir()
-        sh '''git clone https://github.com/shaikriz/Jenkins.git
-cd Jenkins
-ls -lrt
+        sleep 10
+        ws(dir: 'Jenkins_master') {
+          sh '''ls -lrt
 echo $PATH
 java -version
 env
 mvn clean install'''
-        sleep 10
+        }
+
       }
     }
   }
