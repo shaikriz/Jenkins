@@ -4,6 +4,9 @@ pipeline {
     stage('Build') {
       parallel {
         stage('Build') {
+          agent {
+            label 'linux'
+          }
           steps {
             sh '''pwd
 /home/dc-user/apache-maven-3.2.1/bin/mvn clean install
